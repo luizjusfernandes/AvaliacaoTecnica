@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="pt-br" ng-app="registrationApp">
+    <head>
+        <!-- Libraries -->
+        <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <script src="~/node_modules/angular/angular.min.js" integrity="sha512-28WMav3WUIziq1D5l+8y2BrzN+CJgEeIyLksiKOSHWofTgaZc3RMPzvleRhXbLwnzf/C7Xnb0W6pE8PlqeRSog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="~/node_modules/angular/angular-route.min.js" integrity="sha512-Verh3o2plvhEbk/ct46ThMyRkWOeokouYUg2N8BH6DYphkBhespORMmgTg7MuNBbYKZ1zzit+44K6lzXVcMBmA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- Stylesheet -->
+        <link href="~/styles.css" type="text/css" rel="stylesheet">
+
+        <!-- Metadata -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>@ViewData["Title"]</title>
+    </head>
+    <body>
+        <header>  
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-md navbar-dark bg-dark" ng-controller=NavController>
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <a class="navbar-brand ms-3 me-auto" href="/"><img class="img-fluid" src="~/company-logo.png" alt="sistemainfo"></a>
+              <a class="navbar-nav ms-auto me-3" href="/home/logout" id="log-out">Sair</a>
+            </div>
+          </nav>
+        </header>
+        
+        <main>
+          @RenderBody()
+        </main>
+
+        <script src="~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        @RenderSection("Scripts", required: false)
+        
+        <script src="~/angular/app.module.js"></script>
+        <script src="~/angular/login.component/login.module.js"></script>
+        <script src="~/angular/thanks.component/thanks.module.js"></script>
+        <script src="~/angular/register.component/register.module.js"></script>
+        <script src="~/angular/login.component/login.component.js"></script>
+        <script src="~/angular/register.component/register.component.js"></script>
+        <script src="~/angular/thanks.component/thanks.component.js"></script>
+        <script src="~/angular/app.config.js"></script>
+    </body>
+</html>

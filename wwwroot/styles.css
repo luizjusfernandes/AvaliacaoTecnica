@@ -1,0 +1,71 @@
+html {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.background
+{
+    background-image: url(bg-home.jpg);
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+form {
+    padding: 1rem; 
+}
+
+.container-fluid {
+    padding:0;
+}
+
+.sidebar {
+    position: fixed;
+    width: 250px;
+    padding: 5rem 0.5rem;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+}
+
+@media (max-width: 767.99px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+.list-group-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.navbar {
+    position: relative;
+    z-index: 1;
+    padding: 0.5rem;
+}
+
+.navbar a {
+    color:white;
+}
+
+.thanks {
+    margin-top: 4rem;
+    color: white;
+    text-align: center;
+}
+
+.error {
+    text-align: center;
+    margin-top: 4rem;
+}

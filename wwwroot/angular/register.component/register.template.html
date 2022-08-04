@@ -1,0 +1,38 @@
+<div class="container col-lg-6 mx-auto mt-5 border">
+    <form name="form" ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }" novalidate>
+        <div class="mb-3">
+            <label for="code" class="form-label">Código</label>
+            <input type="text" ng-model="$ctrl.dataModel.Code" class="form-control" id="code" autofocus name="fCode">
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" ng-model="$ctrl.dataModel.Name" class="form-control" id="name" name="fName" pattern="[A-Za-zãáâéêíõóúÃÁÂÉÊÕÓÚ ]+" required>
+            <div ng-show="form.$submitted || form.fName.$touched">
+                <span class="form-text" ng-show="form.fName.$error.required">O nome é obrigatório.</span>
+                <span class="form-text" ng-show="form.fName.$error.pattern">O nome não pode conter números ou caracteres especiais.</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="cpf" class="form-label">CPF</label>
+            <input type="text" ng-model="$ctrl.dataModel.Cpf" class="form-control" id="cpf" name="fCpf" placeholder="123.456.789-00" pattern="^([0-9]{3}\.){2}([0-9]){3}(-)([0-9]){2}$" required>
+            <div ng-show="form.$submitted || form.fCpf.$touched">
+                <span class="form-text" ng-show="form.fCpf.$error.required">O CPF é obrigatório.</span>
+                <span class="form-text" ng-show="form.fCpf.$error.pattern">CPF deve corresponder ao formato especificado.</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Endereço</label>
+            <input type="text" ng-model="$ctrl.dataModel.Address" class="form-control" id="address" name="fAddress">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Telefone</label>
+            <input type="text" ng-model="$ctrl.dataModel.Phone" class="form-control" id="phone" name="fPhone" pattern="^((\+)|([0-9\(]))(([0-9\-\(\) ]){6,32})$">
+            <div ng-show="form.$submitted || form.fPhone.$touched">
+                <span class="form-text" ng-show="form.fPhone.$error.pattern">Formato de telefone inválido.</span>
+            </div>
+        </div>
+        <button type="submit" ng-click="form.$valid && $ctrl.update()" class="btn btn-primary">Cadastrar</button>
+    </form>
+
+      <div id="alert-placeholder"></div>
+  </div>
